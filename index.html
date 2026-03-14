@@ -400,3 +400,336 @@ const App = () => {
 
 export default App;
 
+              <Activity size={18} />
+              <span>صحتك أولويتنا.. ودقتنا دليل اهتمامنا</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
+              نتائج تحاليل موثوقة <br/>
+              <span className="text-cyan-600">للاطمئنان على من تحب</span>
+            </h2>
+            <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              في معمل الأزهر، نقدم لك أدق النتائج باستخدام أحدث تكنولوجيا التحاليل (جهاز F50)، مع خدمة سحب العينات من المنزل واستلام النتائج عبر الواتساب لراحتك التامة.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <button 
+                onClick={() => setShowModal(true)}
+                className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1 shadow-xl shadow-cyan-600/20"
+              >
+                <Home size={22} />
+                طلب سحب منزلي
+              </button>
+              <a 
+                href={labData.whatsappLink}
+                target="_blank" rel="noreferrer"
+                className="bg-green-50 text-green-700 border border-green-200 hover:bg-green-100 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1"
+              >
+                <MessageCircle size={22} />
+                تواصل عبر الواتساب
+              </a>
+            </div>
+
+            <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-6 text-sm font-semibold text-slate-700">
+              <div className="flex items-center gap-2"><ShieldCheck className="text-cyan-500" size={20}/> سرية تامة للبيانات</div>
+              <div className="flex items-center gap-2"><CheckCircle className="text-cyan-500" size={20}/> دقة في النتائج</div>
+              <div className="flex items-center gap-2"><Microscope className="text-cyan-500" size={20}/> اهتمام بالتفاصيل</div>
+            </div>
+          </div>
+
+          {/* Hero Image */}
+          <div className="flex-1 w-full max-w-lg mx-auto">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-600 to-blue-500 rounded-[2.5rem] rotate-3 scale-105 opacity-20"></div>
+              <img 
+                src="1000189711.jpg" 
+                alt="إعلان معمل الأزهر" 
+                className="relative rounded-[2rem] shadow-2xl border-4 border-white object-cover w-full h-auto z-10"
+              />
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-3 border border-slate-100">
+                <div className="bg-green-100 text-green-600 p-2 rounded-full">
+                  <CheckCircle size={24} />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 font-bold">نتائج سريعة</p>
+                  <p className="font-bold text-slate-800">تصلك عبر الواتساب</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services/Why Us Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">لماذا تختار معمل الأزهر؟</h2>
+            <p className="text-slate-600">نجمع بين الخبرة العلمية، التكنولوجيا الحديثة، والراحة لنقدم لك تجربة طبية استثنائية.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: <Microscope size={32}/>, title: "دقة الأجهزة المتقدمة", desc: "نستخدم جهاز كيمياء F50 المتطور لضمان دقة متناهية في كل فحص نقوم به." },
+              { icon: <Home size={32}/>, title: "سحب العينات من المنزل", desc: "طاقم تمريض محترف يصلك لباب البيت لسحب العينات بأمان تام." },
+              { icon: <CheckCircle size={32}/>, title: "سحب بدون ألم", desc: "ممرضة متخصصة وذات كفاءة عالية جداً في سحب العينات للأطفال وكبار السن." },
+              { icon: <MessageCircle size={32}/>, title: "نتائجك على الواتساب", desc: "لا حاجة للعودة للمعمل، نرسل لك تقرير النتائج المفصل مباشرة على هاتفك." }
+            ].map((feature, idx) => (
+              <div key={idx} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-cyan-200 hover:shadow-lg transition-all group">
+                <div className="w-16 h-16 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                  {feature.icon}
+                </div>
+                <h3 className="font-bold text-xl text-slate-800 mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Doctor Profile Section */}
+      <section className="py-20 bg-slate-900 text-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 w-full max-w-md relative">
+              <div className="absolute inset-0 bg-cyan-500 rounded-[3rem] -rotate-6 scale-105 opacity-50"></div>
+              <img 
+                src="1000189712.jpg" 
+                alt={labData.doctor} 
+                className="relative rounded-[2.5rem] shadow-2xl object-cover border-4 border-slate-800 w-full z-10"
+              />
+            </div>
+            
+            <div className="flex-1 text-center lg:text-right">
+              <div className="inline-block bg-slate-800 text-cyan-400 font-bold px-4 py-2 rounded-full mb-6">
+                الإشراف العلمي المباشر
+              </div>
+              <h2 className="text-4xl font-bold mb-4">{labData.doctor}</h2>
+              <p className="text-xl text-cyan-300 mb-8 font-semibold">أخصائي التحاليل الطبية والكيمياء الحيوية</p>
+              
+              <div className="space-y-6 text-slate-300">
+                <p className="text-lg leading-relaxed flex items-start gap-3">
+                  <CheckCircle className="text-cyan-500 shrink-0 mt-1" size={24} />
+                  <span>بكالوريوس العلوم - قسم الكيمياء الخاصة.</span>
+                </p>
+                <p className="text-lg leading-relaxed flex items-start gap-3">
+                  <CheckCircle className="text-cyan-500 shrink-0 mt-1" size={24} />
+                  <span>دبلومة الدراسات العليا في الكيمياء الحيوية السريرية (كلية الطب البيطري - جامعة السادات).</span>
+                </p>
+                <p className="text-lg leading-relaxed flex items-start gap-3">
+                  <CheckCircle className="text-cyan-500 shrink-0 mt-1" size={24} />
+                  <span>إشراف دقيق على كل خطوة في التحليل لضمان خروج النتيجة بأعلى معايير الجودة العالمية.</span>
+                </p>
+              </div>
+
+              <div className="mt-10 p-6 bg-slate-800 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 border border-slate-700">
+                <div>
+                  <h4 className="font-bold text-lg mb-1">تعرف علينا أكثر</h4>
+                  <p className="text-sm text-slate-400">شاهد فيديو توضيحي من دكتور محمود</p>
+                </div>
+                <a 
+                  href={labData.fbVideo}
+                  target="_blank" rel="noreferrer"
+                  className="bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-colors whitespace-nowrap w-full sm:w-auto justify-center"
+                >
+                  <PlayCircle size={20} />
+                  مشاهدة الفيديو
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Offers Section (Sales Oriented) */}
+      <section className="py-20 bg-cyan-50">
+        <div className="container mx-auto px-4 text-center">
+          <span className="bg-rose-100 text-rose-600 px-4 py-1 rounded-full font-bold text-sm mb-4 inline-block">عروض حصرية</span>
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-12">باقات الاطمئنان الشامل 🩸</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Offer 1 */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg border-t-8 border-cyan-500 hover:-translate-y-2 transition-transform duration-300">
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">الفحص الشامل</h3>
+              <p className="text-slate-500 text-sm mb-6">للاطمئنان على وظائف الجسم الحيوية</p>
+              <ul className="text-right space-y-3 mb-8 text-slate-700 font-medium">
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-500" /> صورة دم كاملة (CBC)</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-500" /> وظائف كبد وكلى كاملة</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-500" /> سكر صائم وفاطر</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-500" /> تحليل بول وبراز</li>
+              </ul>
+              <button onClick={() => setShowModal(true)} className="w-full bg-slate-100 text-cyan-800 hover:bg-cyan-600 hover:text-white py-3 rounded-xl font-bold transition-colors">
+                احجز الباقة الآن
+              </button>
+            </div>
+
+            {/* Offer 2 (Highlight) */}
+            <div className="bg-cyan-700 rounded-3xl p-8 shadow-2xl border border-cyan-500 transform scale-105 relative text-white z-10">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-rose-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md w-max">
+                الأكثر طلباً
+              </div>
+              <h3 className="text-2xl font-bold mb-2">باقة السكر والدهون</h3>
+              <p className="text-cyan-200 text-sm mb-6">ضرورية جداً بعد فترات الأعياد والمناسبات</p>
+              <ul className="text-right space-y-3 mb-8 font-medium">
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-300" /> الكوليسترول الكلي</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-300" /> الدهون الثلاثية (TG)</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-300" /> الدهون النافعة والضارة</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-300" /> سكر تراكمي (HbA1c)</li>
+              </ul>
+              <button onClick={() => setShowModal(true)} className="w-full bg-white text-cyan-800 hover:bg-cyan-50 py-3 rounded-xl font-bold transition-colors shadow-lg">
+                احجز الباقة الآن
+              </button>
+            </div>
+
+            {/* Offer 3 */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg border-t-8 border-cyan-500 hover:-translate-y-2 transition-transform duration-300">
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">باقة صحة المرأة</h3>
+              <p className="text-slate-500 text-sm mb-6">للاطمئنان على الفيتامينات والهرمونات</p>
+              <ul className="text-right space-y-3 mb-8 text-slate-700 font-medium">
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-500" /> فيتامين د (Vitamin D)</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-500" /> مخزون الحديد (Ferritin)</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-500" /> وظائف الغدة الدرقية</li>
+                <li className="flex gap-2"><CheckCircle size={18} className="text-cyan-500" /> كالسيوم الدم</li>
+              </ul>
+              <button onClick={() => setShowModal(true)} className="w-full bg-slate-100 text-cyan-800 hover:bg-cyan-600 hover:text-white py-3 rounded-xl font-bold transition-colors">
+                احجز الباقة الآن
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer / Contact */}
+      <footer className="bg-slate-900 text-slate-300 pt-16 pb-8 border-t-4 border-cyan-600">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            {/* Column 1 */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-white p-1 rounded-full">
+                  <img src="1000189709.jpg" alt="لوجو" className="w-12 h-12 rounded-full" />
+                </div>
+                <h3 className="font-bold text-xl text-white">معمل الأزهر</h3>
+              </div>
+              <p className="text-sm leading-relaxed mb-6">
+                نسعى دائماً لتقديم أدق نتائج التحاليل الطبية باستخدام أحدث التكنولوجيا، لنسهل عليك رحلة العلاج والاطمئنان.
+              </p>
+              <div className="flex gap-4">
+                <a href={labData.fbPage} target="_blank" rel="noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-colors text-white">
+                  <Facebook size={20} />
+                </a>
+              </div>
+            </div>
+
+            {/* Column 2 */}
+            <div>
+              <h4 className="text-white font-bold text-lg mb-6 border-b border-slate-700 pb-2 inline-block">معلومات التواصل</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <MapPin className="text-cyan-500 shrink-0 mt-1" size={18} />
+                  <span>{labData.address}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Clock className="text-cyan-500 shrink-0 mt-1" size={18} />
+                  <span>{labData.hours}</span>
+                </li>
+                <li className="flex items-center gap-3 font-bold text-white" dir="ltr">
+                  <span className="flex-1 text-right">{labData.phone}</span>
+                  <Phone className="text-cyan-500" size={18} />
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3 & 4: Quick Action */}
+            <div className="lg:col-span-2 bg-slate-800 p-8 rounded-3xl">
+              <h4 className="text-white font-bold text-xl mb-4">هل تحتاج لسحب عينة من المنزل؟</h4>
+              <p className="mb-6 text-slate-400">تواصل معنا الآن عبر الواتساب وسنقوم بإرسال التمريض المتخصص لمنزلك في أسرع وقت.</p>
+              <a 
+                href={labData.whatsappLink}
+                target="_blank" rel="noreferrer"
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors w-full sm:w-auto"
+              >
+                <MessageCircle size={22} />
+                مراسلة واتساب الآن
+              </a>
+            </div>
+
+          </div>
+          
+          <div className="border-t border-slate-800 pt-8 text-center text-sm text-slate-500 font-semibold">
+            جميع الحقوق محفوظة © {new Date().getFullYear()} - معمل الأزهر للتحاليل الطبية
+          </div>
+        </div>
+      </footer>
+
+      {/* Booking Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full relative shadow-2xl animate-fade-in">
+            <button 
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 left-4 text-slate-400 hover:text-rose-500 transition-colors bg-slate-100 rounded-full w-8 h-8 flex items-center justify-center font-bold"
+            >
+              ✕
+            </button>
+            
+            <div className="text-center mb-6">
+              <div className="bg-cyan-100 text-cyan-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calendar size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">طلب حجز موعد</h3>
+              <p className="text-slate-500 text-sm">سيقوم فريق خدمة العملاء بالتواصل معك لتأكيد الموعد وتفاصيل التحاليل.</p>
+            </div>
+
+            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert("سيتم تفعيل ربط النموذج قريباً. يرجى التواصل عبر الواتساب حالياً."); setShowModal(false); }}>
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-1">الاسم الكريم</label>
+                <input type="text" required className="w-full border border-slate-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-slate-50" placeholder="مثال: أحمد محمد" />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-1">رقم الموبايل (يفضل عليه واتساب)</label>
+                <input type="tel" required dir="ltr" className="w-full border border-slate-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-slate-50 text-right" placeholder="01X XXXX XXXX" />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-1">نوع الخدمة المطلوبة</label>
+                <select className="w-full border border-slate-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-slate-50">
+                  <option>استفسار عن أسعار تحاليل</option>
+                  <option>طلب سحب عينة من المنزل</option>
+                  <option>حجز أحد باقات العروض</option>
+                </select>
+              </div>
+              <button type="submit" className="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-4 rounded-xl font-bold text-lg mt-4 transition-colors shadow-lg">
+                تأكيد وإرسال الطلب
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Floating WhatsApp Button */}
+      <a 
+        href={labData.whatsappLink}
+        target="_blank" rel="noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-[0_10px_25px_rgba(34,197,94,0.5)] hover:scale-110 transition-transform z-40 flex items-center justify-center animate-bounce"
+        title="تواصل معنا على واتساب"
+      >
+        <MessageCircle size={32} />
+      </a>
+
+      {/* Simple Custom Styles for Animations */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.3s ease-out forwards;
+        }
+      `}} />
+    </div>
+  );
+};
+
+export default App;
+
